@@ -21,7 +21,7 @@ app.post('/tasks', async(req, res) => {
     res.send(await Tasks.create(req.body))
 })
 
-db.sync({ alter: true }).then(() => {
+db.sync().then(() => {
     app.listen(PORT, (req, res) => {
         console.log(`started on http://localhost:${PORT}`)
     })
